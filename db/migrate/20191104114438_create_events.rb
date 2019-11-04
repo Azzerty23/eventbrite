@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :price
       t.string :location
-      t.references :administrator, foreign_key: true
+      t.references :administrator, foreign_key: {to_table: :users}
 
       t.timestamps
     end
