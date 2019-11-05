@@ -6,10 +6,10 @@
     <% if current_user.id == @event.administrator_id%>
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item">
-          <a class="btn btn-info" href="<%= edit_event_registration_path(@event.id)%>">Modifier</a>
+          <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-danger" href="<%= destroy_event_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+          <a class="btn btn-danger" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
         </li>
       </ul>
       <%end%>
@@ -17,12 +17,30 @@
   </div>
   <div class="card-body">
     <h2 class="card-title"><strong><%= @event.title %></h2>
-    <h4 class="card-title"><strong><%= @event.start_date.strftime("%Y-%m-%d %H:%M") %></h4>
-    <h5 class="card-text">Durée : <%= @event.duration%>min</h5>
-    <h6 class="card-text">Description :<%= @event.description %></h6>
-    <h6 class="card-text">Prix :<%= @event.price %> €</h6>
+    <h4 class="card-title"><strong><%= @event.start_date.strftime("%d-%m-%Y %H:%M") %></h4>
+    <h5 class="card-text">Durée : <%= @event.duration%>min (fin le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>)</h5>
+    <h6> Description : </h6>
+    <div class="card shadow rounded col-4 offset-4 mb-3 p-3">
+      <h6 class="card-text"><%= @event.description %></h6>
+    </div>
+    <h5 class="card-text">Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %> (<%= @event.administrator.email %>) </h5>
+    <h6 class="card-text">Prix : <%= @event.price %> € | <%= @event.attendances.count %> participants </h6>
     <h5 class="card-text">Made in Montpellier</h5>
     <h6 class="card-text">Situé à <%= @event.location %></h6>
   </div>
+
+  <p>
+      <% if current_user != nil %>
+        <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
+        <% if @attendance != nil %>
+          <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
+        <% else %>
+          <%= link_to 'Je participe', attendances_path({ :attendance => { :event_id => @event.id, :user_id => current_user.id } }), method: :post, :class => 'btn btn-sm btn-dark ml-1' %>
+        <% end %>
+      <% else %>
+        <%= link_to 'Log in to attendance this', login_path, :class => 'btn btn-sm btn-outline-dark' %>
+      <% end %>
+    </p>
+
 </div>
 <br>

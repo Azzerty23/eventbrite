@@ -24,5 +24,9 @@ class Event < ApplicationRecord
     end
   end
 
+  def end_date
+    start_date + duration.minutes
+  end
+
 
 end
