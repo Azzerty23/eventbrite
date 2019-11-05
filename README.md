@@ -11,7 +11,7 @@ Start:
 - `$ rails server`
 
 Go to: 
-- `localhost:3000`
+- `localhost:3000` <br>
 Or :
 - `https://eventbrite-thp-mtp.herokuapp.com/`
 
