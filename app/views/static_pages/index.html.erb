@@ -8,7 +8,7 @@
   <h2>Bienvenue <%= current_user.email %> !</h2>
   </div>
 <%else%>
-  <div class="alert alert-danger" role="alert"><br>
+  <div class="alert alert-light" role="alert"><br>
     <%= flash[:danger] %>
     <p>Vous n'êtes pas connecté !<br>
     <a class="btn btn-info" href="<%= new_user_session_path %>">Se connecter</a> | <a class="btn btn-info" href="<%= new_user_registration_path %>">S'inscrire</a><br><br>
@@ -18,7 +18,7 @@
 <div class="card-columns">
 <% @events.each do |event| %>
   <div class="card">
-      <div class="card-body">
+      <div class="card-body m-1 bg-primary">
         <h4 class="card-title"> <strong><%= event.title %></strong> :</h4>
         <p class="card-text"> <%= event.start_date.strftime("%Y-%m-%d") %> </p>
         <small class="text-muted"><a><%= event.price%> € | <%= event.attendances.count %> participants </a></small>
@@ -33,9 +33,7 @@
 
 <ul>
   <% if user_signed_in? %>
-    <li>
       <%= link_to "Secret page", static_pages_secret_path %>
-    </li>
   <% end %>
 </ul>
 

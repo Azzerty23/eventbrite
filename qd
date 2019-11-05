@@ -1,0 +1,310 @@
+[33mcommit fef70a3f2eb9ac9a005d80acc6e82db8d6437ddd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 8b18a72 a6ffae1
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 19:24:26 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 8b18a72680acdae625d99ec3506ad55af06703f9[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 19:24:14 2019 +0100
+
+    add show_event
+
+[33mcommit a6ffae1cbc7ed264657eb3094b2a47a688f15b12[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 18:58:21 2019 +0100
+
+    fix wrapped event content
+
+[33mcommit ca2f733053d62b62faa0a229ee0cc6febcdacac5[m
+Merge: 7e6d851 bf823be
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 18:52:00 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 7e6d8519037c8b600d5cd94000ce5a756f614946[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 18:51:57 2019 +0100
+
+    test show
+
+[33mcommit bf823bee5fb22bb20535937dd365daaa3bba6e4f[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 18:49:05 2019 +0100
+
+    fix event creation
+
+[33mcommit f2f39081ae180068618bd439398ceed0c1d2733e[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 18:23:45 2019 +0100
+
+    add images to events index
+
+[33mcommit 02e9c8fa1208ced6da6640aa8a76d5ba3016f352[m
+Merge: e7911e8 98e13f7
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 18:20:54 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 98e13f71dccd65e6318064f1026b77c680efa060[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 18:12:48 2019 +0100
+
+    add lots of things
+
+[33mcommit 84653b76b33f68dda09d7ff4b9f4d6c306cd5c81[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 17:21:10 2019 +0100
+
+    change image
+
+[33mcommit dad51676b2e329508497d618d8f2ff805a4314b6[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 17:16:39 2019 +0100
+
+    add jumbotron image
+
+[33mcommit e7911e842cde594b661e6e2fed87e917612eab61[m
+Merge: d52a165 d9e91f0
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 16:53:36 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit d52a165cabcf3eaba5ef9d3513adc4f2977eeeeb[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 16:53:12 2019 +0100
+
+    change before_action events controller
+
+[33mcommit d9e91f0266fe5e4d18286ebea09b55c573d0696a[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 16:51:31 2019 +0100
+
+    change index
+
+[33mcommit 4754ab66e393ea537497524efd696f1a649b5ffb[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 16:31:29 2019 +0100
+
+    card new event
+
+[33mcommit 953bbd5667abb529505f718bb7ee7fb6b84030e9[m
+Merge: ae529db e13f5b1
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 15:57:06 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit ae529db11eaf2cccd1837477136e1c8e6de26509[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 15:56:51 2019 +0100
+
+    add events forms
+
+[33mcommit e13f5b153bc77c75ba65380588a7579a5bbb3ebe[m
+Merge: 9a4c975 61208bc
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 15:51:49 2019 +0100
+
+    Merge branches 'master' and 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 9a4c9753eab0779e362fc167d5c8e45e4364e0ff[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 15:51:40 2019 +0100
+
+    add cards
+
+[33mcommit 61208bceffa888c4eac4e75475406e82029d3f03[m
+Merge: a3e5708 f9c900d
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 15:27:19 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit f9c900d40917ac55e61442384e390c8dcefa7683[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 15:26:22 2019 +0100
+
+    change view sign_up
+
+[33mcommit a3e57083dde63131c7724171bea8852240ca3265[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 15:25:06 2019 +0100
+
+    fix seeds
+
+[33mcommit 438311a5c608aa4b978a819a1903dafbb5351f37[m
+Merge: e7652a0 f36776c
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 15:06:00 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit e7652a02d4172bdab7886eced7eec6a1a60dafa5[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 15:05:50 2019 +0100
+
+    link to navbar
+
+[33mcommit f36776cf60f878eb9aa8641b32bbbca911f1c80a[m
+Merge: 4317497 029f50b
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 15:03:27 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 43174972bcfee2e89941444fddc2eb56ea1c1efd[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 15:01:20 2019 +0100
+
+    events views
+
+[33mcommit 029f50b30ab8f50d73711cd3ee349c5eecdb93f2[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 14:56:08 2019 +0100
+
+    Add Team/Contact
+
+[33mcommit e659059b039fecc915b7e53fca7f225b4f77e051[m
+Merge: 6a02a5f dd05872
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 14:42:29 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 6a02a5f04398cd343b2574187a863feaea6951e6[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 14:42:14 2019 +0100
+
+    change background
+
+[33mcommit dd058723e52d6cde1ee6fc3ec5aa42af1f99c922[m
+Merge: 54016dc 72cf107
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 14:36:41 2019 +0100
+
+    Merge branch 'master' of github.com:Azzerty23/eventbrite
+
+[33mcommit 54016dc8550f1b6610ef82d42e48baf7326f5040[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 14:36:15 2019 +0100
+
+    add event ressources and views
+
+[33mcommit 72cf107d42ee587f752b9ffa49e587dbdb38a9c9[m
+Author: mariollet <mariollet@outlook.fr>
+Date:   Tue Nov 5 14:35:27 2019 +0100
+
+    Add favicon/navbar/ba ckground
+
+[33mcommit e8d56a4f3958341433a3180067a75668c356e624[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 13:59:50 2019 +0100
+
+    add bootstrap
+
+[33mcommit 0ef61818462caed61d0a218181bed77e3fb91c63[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 11:56:34 2019 +0100
+
+    heroku environement
+
+[33mcommit 77e3ba3265becde1daa0984910f0c9405404976c[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 11:25:31 2019 +0100
+
+    add static_pages
+
+[33mcommit eced7503dcae2f8099fdc97c5cd7012596011673[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 11:18:40 2019 +0100
+
+    fix migration device
+
+[33mcommit a8adcddf0e561afafb13ef24f556dfa9d728088b[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Tue Nov 5 11:17:07 2019 +0100
+
+    add device
+
+[33mcommit a5d21479d81b30518f7c289dca438d19f3bea103[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 16:34:36 2019 +0100
+
+    add ActionMailer environment
+
+[33mcommit 98b2ef7932f62be4a2f7c60342c400775dae6577[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 15:24:37 2019 +0100
+
+    feat: letter_opener
+
+[33mcommit 0899bf4bd183e8e991dee8f03526d9e9f73507c8[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 14:10:14 2019 +0100
+
+    add seed
+
+[33mcommit b603b5a2152b05105cf0816b41d7e7a5afba7453[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 14:09:54 2019 +0100
+
+    add users foreign_key constraint
+
+[33mcommit 303b21373cef4901ba595f83d08034e77583a18c[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 14:09:25 2019 +0100
+
+    add Events validations
+
+[33mcommit 7f9aff41a2f84ff3b0a8e6445c68256092652a9e[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 13:52:15 2019 +0100
+
+    typo : encrypted_password
+
+[33mcommit f985c9e64714aae98839cd9ed36d4abad131b308[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 13:44:33 2019 +0100
+
+    fix foreign_key for events migration
+
+[33mcommit 2a4695317476f6851a529995c1d113a3acdca3f9[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 12:53:28 2019 +0100
+
+    create Attendance model
+
+[33mcommit 2e3dad3f7b21c6889793edd6cd48a595c2c72c77[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 12:50:08 2019 +0100
+
+    create Event model
+
+[33mcommit 07b456381c393046469092355a0c98f2933b995d[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 12:43:07 2019 +0100
+
+    create User model
+
+[33mcommit 5c7566008bc5dcbf629a16645c7f0667084e1409[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 12:41:12 2019 +0100
+
+    fix table_print typo
+
+[33mcommit ca580e3caede1c7179d2751776ef8e7a3d7711c5[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 12:27:24 2019 +0100
+
+    Gemfile : add faker, table-print and bcrypt
+
+[33mcommit 97a8c4a90021d6bc9c43cb49271506274cf740fa[m
+Author: Azzerty23 <azzerty23@hotmail.fr>
+Date:   Mon Nov 4 12:25:55 2019 +0100
+
+    init rails
