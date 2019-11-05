@@ -30,17 +30,17 @@
   </div>
 
   <p>
-      <% if current_user != nil %>
+    <% if current_user != nil %>
         <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
-        <% if @attendance != nil %>
-          <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
-        <% else %>
-          <%= link_to 'Je participe', attendances_path({ :attendance => { :event_id => @event.id, :user_id => current_user.id } }), method: :post, :class => 'btn btn-sm btn-dark ml-1' %>
-        <% end %>
+      <% if @attendance != nil %>
+        <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
       <% else %>
-        <%= link_to 'Log in to attendance this', login_path, :class => 'btn btn-sm btn-outline-dark' %>
+        <%= link_to 'Je participe', attendances_path({ :attendance => { :event_id => @event.id, :user_id => current_user.id } }), method: :post, :class => 'btn btn-sm btn-dark ml-1' %>
       <% end %>
-    </p>
+    <% else %>
+      <%= link_to 'Se connecter pour partiper', login_path, :class => 'btn btn-sm btn-outline-dark' %>
+    <% end %>
+  </p>
 
 </div>
 <br>
