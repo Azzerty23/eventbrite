@@ -1,11 +1,12 @@
 <div class="jumbotron"><br>
-  <h1 class="display-4">Bienvenue sur Eventbrite</h1>
-  <p class="lead">Trouve ou sortir plus façilement que jamais !</p>
+  <strong><h1 class="display-4">Eventbrite</h1></strong>
 </div>
 
 <% if current_user != nil %> 
+  <div>
   <%= flash[:success] %>
-  <h2>Bienvenue <%= current_user.firstname %> !</h2>
+  <h2>Bienvenue <%= current_user.email %> !</h2>
+  </div>
 <%else%>
   <div class="alert alert-danger" role="alert"><br>
     <%= flash[:danger] %>
@@ -17,19 +18,7 @@
 <ul>
   <% if user_signed_in? %>
     <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
-
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
-
-    <li>
       <%= link_to "Secret page", static_pages_secret_path %>
-    </li>
-
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
     </li>
   <% end %>
 </ul>

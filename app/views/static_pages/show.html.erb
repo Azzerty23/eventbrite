@@ -1,0 +1,24 @@
+<div class="card text-center">
+  <div class="card-header">
+  <% if current_user != nil %>
+    <% if current_user.id == @user.id%>
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="btn btn-info" href="<%= edit_user_registration_path(@user.id)%>">Modifier</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+        </li>
+      </ul>
+      <%end%>
+    <%end%>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title"><strong><%= @user.firstname %> <%= @user.lastname%></strong></h4>
+    <h6 class="card-text"><%= @user.description %></h6>
+    <h6 class="card-text"><%= @user.email %></h6>
+    <h6 class="card-text">Profil crée le <%= @user.created_at.strftime("%Y-%m-%d") %></h6><br>
+    <h5 class="card-text">Made in Montpellier</h5><br>
+  </div>
+</div>
+<br>
