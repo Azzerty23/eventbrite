@@ -1,7 +1,18 @@
 <div class="jumbotron"><br>
   <h1 class="display-4">Bienvenue sur Eventbrite</h1>
-  <p class="lead">Trouve de quoi t'amuser plus façilement que jamais !</p>
+  <p class="lead">Trouve ou sortir plus façilement que jamais !</p>
 </div>
+
+<% if current_user != nil %> 
+  <%= flash[:success] %>
+  <h2>Bienvenue <%= current_user.firstname %> !</h2>
+<%else%>
+  <div class="alert alert-danger" role="alert"><br>
+    <%= flash[:danger] %>
+    <p>Vous n'êtes pas connecté !<br>
+    <a class="btn btn-info" href="<%= new_user_session_path %>">Se connecter</a> | <a class="btn btn-info" href="<%= new_user_registration_path %>">S'inscrire</a><br><br>
+  </div>
+<% end %>
 
 <ul>
   <% if user_signed_in? %>
@@ -20,15 +31,5 @@
     <li>
       <%= link_to "Edit email / password", edit_user_registration_path %>
     </li>
-
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-
   <% end %>
 </ul>
