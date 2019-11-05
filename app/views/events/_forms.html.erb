@@ -1,21 +1,24 @@
 <%= flash[:danger] %>
 
-<% if  @event.errors %>
-      <div class="alert alert-danger" role="alert">
+<% if @event.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+    <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+    <ul>
         <% @event.errors.full_messages.each do |message| %>
-          <p><%= message %></p>
+        <li> <%= message %> </li>
         <% end %>
-      </div>
+    </ul>
+    </div>
 <% end %>
 
-<%= form_with model: @event, class: 'mt-5 col-4 offset-4' do |f| %>
+<%= form_with model: @event, local: true, class: 'mt-5 col-4 offset-4' do |f| %>
     <div class= 'form-group'>
         <label> Date de début </label>
         <%= f.datetime_local_field :start_date, class: 'form-control', placeholder: 'Date de début' %>
     </div>
     <div class= 'form-group'>
         <label> Durée </label>
-        <%= f.number_field :duration, class: 'form-control', placeholder: 'Durée' %>
+        <%= f.number_field :duration, min: 30, step: 5, class: 'form-control', placeholder: 'Durée' %>
     </div>
     <div class= 'form-group'>
         <label> Titre </label>

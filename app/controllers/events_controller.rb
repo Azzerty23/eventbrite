@@ -34,7 +34,7 @@ class EventsController < ApplicationController
       redirect_to events_path
     else
       flash.now[:danger] = 'Something went wrong, please check your input'
-      render 'new'
+      render new_event_path
     end
   end
 
