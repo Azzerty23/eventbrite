@@ -6,4 +6,11 @@ class StaticPagesController < ApplicationController
 
   def secret
   end
+
+  def team
+  end
+
+  def contact
+  end
+  
 end
