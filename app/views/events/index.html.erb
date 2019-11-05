@@ -16,6 +16,7 @@
             <small class="text-muted">
               <strong><%= event.administrator.firstname %> <%= event.administrator.lastname %></strong> <cite title="Détails de l'event"><%= link_to "voir détails", event_path(event) %></cite>
             </small>
+            <p> <%= event.attendances.count %> participants </p>
           </footer>
         </div>
     </div>
