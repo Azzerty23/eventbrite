@@ -13,6 +13,22 @@
     <p>Vous n'êtes pas connecté !<br>
     <a class="btn btn-info" href="<%= new_user_session_path %>">Se connecter</a> | <a class="btn btn-info" href="<%= new_user_registration_path %>">S'inscrire</a><br><br>
   </div>
+<% end %><br>
+
+<div class="card-columns">
+<% @events.each do |event| %>
+  <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"> <strong><%= event.title %></strong> :</h4>
+        <p class="card-text"> <%= event.start_date.strftime("%Y-%m-%d") %> </p>
+        <small class="text-muted"><a><%= event.price%> €</a></small>
+        <footer class="blockquote-footer">
+          <small class="text-muted">
+            <strong><%= event.administrator.firstname %></strong> | Montpellier </strong> <cite title="Détails du event"><%= link_to "voir détails", event_path(event.id) %></cite>
+          </small>
+        </footer>
+      </div>
+  </div>
 <% end %>
 
 <ul>
@@ -22,3 +38,4 @@
     </li>
   <% end %>
 </ul>
+

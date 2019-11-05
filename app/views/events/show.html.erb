@@ -3,7 +3,7 @@
 <div class="card text-center">
   <div class="card-header">
   <% if current_user != nil %>
-    <% if current_user.id == @user.id%>
+    <% if current_user.id == @event.administrator_id%>
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item">
           <a class="btn btn-info" href="<%= edit_event_registration_path(@event.id)%>">Modifier</a>
@@ -16,12 +16,13 @@
     <%end%>
   </div>
   <div class="card-body">
-    <h4 class="card-title"><strong><%= @event.start_date %> <%= @event.duration%></strong></h4>
-    <h6 class="card-text"><%= @event.description %></h6>
-    <h6 class="card-text"><%= @event.price %></h6>
-    <h6 class="card-text">Evénement crée le <%= @event.created_at.strftime("%Y-%m-%d") %></h6><br>
-    <h5 class="card-text">Made in Montpellier</h5><br>
-    <h6 class="card-text"><%= @event.location %></h6>
+    <h2 class="card-title"><strong><%= @event.title %></h2>
+    <h4 class="card-title"><strong><%= @event.start_date.strftime("%Y-%m-%d %H:%M") %></h4>
+    <h5 class="card-text">Durée : <%= @event.duration%>min</h5>
+    <h6 class="card-text">Description :<%= @event.description %></h6>
+    <h6 class="card-text">Prix :<%= @event.price %> €</h6>
+    <h5 class="card-text">Made in Montpellier</h5>
+    <h6 class="card-text">Situé à <%= @event.location %></h6>
   </div>
 </div>
 <br>
