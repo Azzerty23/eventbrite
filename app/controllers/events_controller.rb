@@ -17,8 +17,9 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @user.update(event_params)
-      redirect_to @event, notice: 'User was successfully updated.'
+    @event = set_event
+    if @event.update(event_params)
+      redirect_to @event, notice: 'Event was successfully updated.'
     else
       render :edit
     end
