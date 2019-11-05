@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, only: [:secret]
+  before_action :authenticate_user!, only: [:secret, :show]
   
   def index
     @events = Event.all
