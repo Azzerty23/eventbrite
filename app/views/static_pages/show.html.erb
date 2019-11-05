@@ -15,10 +15,58 @@
   </div>
   <div class="card-body">
     <h4 class="card-title"><strong><%= @user.firstname %> <%= @user.lastname%></strong></h4>
-    <h6 class="card-text"><%= @user.description %></h6>
     <h6 class="card-text"><%= @user.email %></h6>
+    <h6 class="card-text"><%= @user.description %></h6>
     <h6 class="card-text">Profil crée le <%= @user.created_at.strftime("%Y-%m-%d") %></h6><br>
     <h5 class="card-text">Made in Montpellier</h5><br>
   </div>
 </div>
 <br>
+
+<% if @user.administrator_events.count > 0 %>
+<h3> Evénements que j'organise : </H3>
+<div class="container mt-4">
+    <% @user.administrator_events.each do |event| %>
+    <div class="card flex-row m-2 align-items-center bg-primary">
+        <%= image_tag "surf.jpg", class:"card-img-left", size: "200" %>
+        <div class="card-body">
+          <h5 class="card-title"> <%= event.title %> </h5>
+          <% if event.description.to_s.length > 80 %> 
+              <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
+          <% else %>
+              <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
+          <% end %>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              <strong><%= event.administrator.firstname %> <%= event.administrator.lastname %></strong> <cite title="Détails de l'event"><%= link_to "voir détails", event_path(event) %></cite>
+            </small>
+            <p> <%= event.attendances.count %> participants </p>
+          </footer>
+        </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>
+
+<h3> Mes participations : </H3>
+<div class="container mt-4">
+    <% @user.events.each do |event| %>
+    <div class="card flex-row m-2 align-items-center bg-primary">
+        <%= image_tag "surf.jpg", class:"card-img-left", size: "200" %>
+        <div class="card-body">
+          <h5 class="card-title"> <%= event.title %> </h5>
+          <% if event.description.to_s.length > 80 %> 
+              <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
+          <% else %>
+              <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
+          <% end %>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              <strong><%= event.administrator.firstname %> <%= event.administrator.lastname %></strong> <cite title="Détails de l'event"><%= link_to "voir détails", event_path(event) %></cite>
+            </small>
+            <p> <%= event.attendances.count %> participants </p>
+          </footer>
+        </div>
+    </div>
+    <% end %>
+  </div>
