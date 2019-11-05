@@ -1,0 +1,30 @@
+<%= form_with model: @event, class: 'mt-5 col-4 offset-4' do |f| %>
+    <div class= 'form-group'>
+        <label> Date de début </label>
+        <%= f.datetime_local_field :start_date, class: 'form-control', placeholder: 'Date de début' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Durée </label>
+        <%= f.number_field :duration, class: 'form-control', placeholder: 'Durée' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Titre </label>
+        <%= f.text_area :title, class: 'form-control', placeholder: 'Titre' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Description </label>
+        <%= f.text_area :description, size: '20x2', class: 'form-control align-middle' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Prix </label>
+        <%= f.number_field :price, in: 1..1000, step: 1, class: 'form-control align-middle' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Adresse </label>
+        <%= f.text_area :location, size: '20x2', class: 'form-control align-middle' %>
+    </div>
+    <div class= 'form-group'>
+        <%= f.hidden_field :administrator_id, value: rand(User.all.length) %>
+    </div>
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>
