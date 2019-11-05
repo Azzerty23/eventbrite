@@ -2,12 +2,44 @@
 <html>
   <head>
     <title>Eventbrite</title>
+    <%= favicon_link_tag 'thp.png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="<%= root_path %>"><strong>Eventbrite</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="<%=  %>"> Evénement </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=  %>"> Créer un évenement </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=  %>"> Team </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=  %>"> Contact </a>
+          </li>
+        </ul>
+      </div>
+      <% if current_user != nil %>
+        <a class="btn btn-info"href="<%= edit_user_registration_path %>"><%= current_user.email %></a> | 
+        <a class="btn btn-danger" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Se déconnecter</a>
+      <% else %>
+        <a class="btn btn-primary" href="<%= new_user_session_path %>">Se connecter</a> | 
+        <a class="btn btn-primary" href="<%= new_user_registration_path %>">S'inscrire</a>
+      <% end %>
+    </nav>
+
   </head>
 
   <body>
