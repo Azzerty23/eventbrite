@@ -26,12 +26,15 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    puts '*' * 30
+    puts event_params
+    puts '*' * 30
     if @event.save
       flash[:success] = 'Event successfully created'
       redirect_to events_path
     else
-      flash.now[:danger] = 'Something wen wrong, please check your input'
-      render :new
+      flash.now[:danger] = 'Something went wrong, please check your input'
+      render 'new'
     end
   end
 
@@ -48,7 +51,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location, :administrator)
+    params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location, :administrator_id)
   end
 
 

@@ -1,3 +1,13 @@
+<%= flash[:danger] %>
+
+<% if  @event.errors %>
+      <div class="alert alert-danger" role="alert">
+        <% @event.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+      </div>
+<% end %>
+
 <%= form_with model: @event, class: 'mt-5 col-4 offset-4' do |f| %>
     <div class= 'form-group'>
         <label> Date de début </label>
@@ -24,7 +34,7 @@
         <%= f.text_area :location, size: '20x2', class: 'form-control align-middle' %>
     </div>
     <div class= 'form-group'>
-        <%= f.hidden_field :administrator_id, value: rand(User.all.length) %>
+        <%= f.hidden_field :administrator_id, value: current_user.id %>
     </div>
     <%= f.submit 'Create', class: 'btn btn-primary' %>
 <% end %>
