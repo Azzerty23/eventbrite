@@ -7,7 +7,7 @@
           <a class="btn btn-info" href="<%= edit_user_registration_path(@user.id)%>">Modifier</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-danger" href="<%= destroy_user_session_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+          <a class="btn btn-danger" href="<%= user_registration_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
         </li>
       </ul>
       <%end%>
