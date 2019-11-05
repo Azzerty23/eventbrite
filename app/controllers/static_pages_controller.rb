@@ -12,5 +12,9 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
-  
+
+  def show
+    @user = current_user
+    @events = Event.all
+  end
 end
