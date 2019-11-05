@@ -32,7 +32,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
 
 
       # Uncomment below if timestamps were not included in your original model.
-      t.timestamps null: false
+      # t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
@@ -46,7 +46,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
     # model already existed. Please edit below which fields you would like to remove in this migration.
     remove_column :users, :reset_password_token
     remove_column :users, :reset_password_sent_at
-    remove_column :users, :timestamps
     remove_index :users, :email
     remove_index :users, :reset_password_token
     raise ActiveRecord::IrreversibleMigration
