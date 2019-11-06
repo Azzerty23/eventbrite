@@ -1,5 +1,5 @@
 <div class="jumbotron"><br>
-  <strong><h1 class="display-4">Eventbrite</h1></strong>
+  <strong><em><h1 class="display-4">Eventbrite</h1></em></strong>
 </div>
 
 <% if current_user != nil %> 
@@ -15,25 +15,26 @@
   </div>
 <% end %><br>
 
-<div class="card-columns">
-<% @events.each do |event| %>
-  <div class="card">
-      <div class="card-body m-1 bg-primary">
-        <h4 class="card-title"> <strong><%= event.title %></strong> :</h4>
-        <p class="card-text"> <%= event.start_date.strftime("%Y-%m-%d") %> </p>
-        <small class="text-muted"><a><%= event.price%> € | <%= event.attendances.count %> participants </a></small>
-        <footer class="blockquote-footer">
-          <small class="text-muted">
-            <strong><%= event.administrator.firstname %></strong> | Montpellier </strong> <cite title="Détails du event"><%= link_to "voir détails", event_path(event.id) %></cite>
-          </small>
-        </footer>
+<div class="container">
+  <div class="card-columns">
+    <% @events.each do |event| %>
+      <div class="card border-info">
+          <div class="card-body bg-primary">
+            <h4 class="card-title"> <strong><%= event.title %></strong> :</h4>
+            <p class="card-text"> <%= event.start_date.strftime("%Y-%m-%d") %> </p>
+            <small class="text-muted"><a><%= event.price%> € | <%= event.attendances.count %> participants </a></small>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                <strong><%= event.administrator.firstname %></strong> | Montpellier </strong> <cite title="Détails du event"><%= link_to "voir détails", event_path(event.id) %></cite>
+              </small>
+            </footer>
+          </div>
       </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
-<ul>
-  <% if user_signed_in? %>
-      <%= link_to "Secret page", static_pages_secret_path %>
-  <% end %>
-</ul>
+<% if user_signed_in? %>
+    <%= link_to "Secret page", static_pages_secret_path %>
+<% end %>
 

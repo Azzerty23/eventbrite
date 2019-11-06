@@ -9,7 +9,7 @@
           <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-danger" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+          <a class="btn btn-light" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
         </li>
       </ul>
       <%end%>
@@ -25,7 +25,7 @@
     </div>
     <h5 class="card-text">Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %> (<%= @event.administrator.email %>) </h5>
     <h6 class="card-text">Prix : <%= @event.price %> € | <%= @event.attendances.count %> participants </h6>
-    <h5 class="card-text">Made in Montpellier</h5>
+    <h5 class="card-text">Montpellier</h5>
     <h6 class="card-text">Situé à <%= @event.location %></h6>
   </div>
 
