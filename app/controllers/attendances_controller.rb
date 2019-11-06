@@ -4,6 +4,10 @@ class AttendancesController < ApplicationController
   before_action :set_user
   before_action :set_attendance, only: [:destroy]
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   # POST /attendances
   def create
     @attendance = Attendance.new(attendance_params)

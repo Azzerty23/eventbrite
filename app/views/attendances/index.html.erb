@@ -1,0 +1,6 @@
+<h3> Mes participants : </H3>
+<div class="container mt-4">
+    <% @event.user.each do |event| %>
+    <p> <%= event.user.firstname %> <p>
+    <% end %>
+  </div>

@@ -9,6 +9,9 @@
           <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
         </li>
         <li class="nav-item">
+          <a class="btn btn-primary" href="<%= attendance_path(@event.id) %>">Gérer</a>
+        </li>
+        <li class="nav-item">
           <a class="btn btn-light" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
         </li>
       </ul>
@@ -30,15 +33,19 @@
   </div>
 
   <p>
+
+  
     <% if current_user != nil %>
-        <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
-      <% if @attendance != nil %>
+      <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
+      <% if current_user.id == @event.administrator_id %>
+        <%= link_to "Gérer l'événement", attendance_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
+      <% elsif @attendance != nil %>
         <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
       <% else %>
-        <%= link_to 'Je participe', attendances_path({ :attendance => { :event_id => @event.id, :user_id => current_user.id } }), method: :post, :class => 'btn btn-sm btn-dark ml-1' %>
+        <%= link_to 'Je participe', new_attendance_charge_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
       <% end %>
     <% else %>
-      <%= link_to 'Se connecter pour partiper', login_path, :class => 'btn btn-sm btn-outline-dark' %>
+      <%= link_to 'Se connecter pour partiper', new_user_session_url, :class => 'btn btn-sm btn-outline-dark' %>
     <% end %>
   </p>
 

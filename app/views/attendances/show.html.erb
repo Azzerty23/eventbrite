@@ -1,0 +1,46 @@
+
+<div class="card text-center">
+  <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="<%= event_path %>">Voir</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-light" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+        </li>
+      </ul>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title"><strong><%= @event.title %></h2>
+    <h4 class="card-title"><strong><%= @event.start_date.strftime("%d-%m-%Y %H:%M") %></h4>
+    <h5 class="card-text">Durée : <%= @event.duration%>min (fin le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>)</h5>
+    <div class="card shadow rounded col-4 offset-4 mb-3 p-3">
+      <h6 class="card-text"><%= @event.description %></h6>
+    </div>
+    <h6 class="card-text">Prix : <%= @event.price %> € </h6>
+    <h5 class="card-text">Montpellier</h5>
+    <h6 class="card-text">Situé à <%= @event.location %></h6>
+  </div>
+
+<div class="container">
+  <div class="card-header">
+    <h3> <%= @event.attendances.count %> participants </H3>
+  </div>
+  <div class ="car-body">
+    <div class="card-columns">
+      <% @event.attendances.each do |attendance| %>
+        <div class="card border-info">
+          <div class="card-body">
+            <h4 class="card-title"><strong><%= attendance.user.firstname %> <%= attendance.user.lastname%></strong></h4>
+            <h6 class="card-text"><%= attendance.user.email %></h6>
+            <h6 class="card-text"><%= attendance.user.description %></h6>
+            <h5 class="card-text">Montpellier</h5><br>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>  
+</div>

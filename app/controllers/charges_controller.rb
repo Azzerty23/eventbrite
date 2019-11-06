@@ -1,8 +1,12 @@
 class ChargesController < ApplicationController
 
   def new
-  end
+    @event = Event.find(params[:attendance_id])
+
+   # TODO: cette methode sans lien une fois le paiement validé "" attendances_path({ :attendance => { :event_id => @event.id, :user_id => current_user.id } }), method: :post ""
   
+  end
+
   def create
     # Amount in cents
     @amount = 500
