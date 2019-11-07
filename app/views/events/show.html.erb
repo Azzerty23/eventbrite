@@ -31,7 +31,7 @@
     <h5 class="card-text">Montpellier</h5>
     <h6 class="card-text">Situé à <%= @event.location %></h6>
   </div>
-
+    <%= flash[:success] %>
     <% if current_user != nil %>
       <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
       <% if current_user.id == @event.administrator_id %>
