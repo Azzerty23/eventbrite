@@ -7,6 +7,10 @@ class ChargesController < ApplicationController
   
   end
 
+  def success
+    @event = Event.find(params[:attendance_id])
+  end
+
   def create
     # Amount in cents
     @event = Event.find(params[:attendance_id])
@@ -27,6 +31,9 @@ class ChargesController < ApplicationController
     @attendance = Attendance.new
 
     if @attendance.save
+      puts "$" * 82
+      puts params
+      puts "$" * 82
       redirect_to create_attendances_path(@event.id)
       flash[:success]= "Ta participation est enregistrée !"
     else
