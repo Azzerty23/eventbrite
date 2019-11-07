@@ -2,49 +2,91 @@
 
 <div class="card text-center bg-light">
   <div class="card-header">
-  <% if current_user != nil %>
-    <% if current_user.id == @event.administrator_id%>
-      <ul class="nav nav-pills card-header-pills">
-        <li class="nav-item">
-          <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-primary" href="<%= attendance_path(@event.id) %>">Gérer</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-light" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
-        </li>
-      </ul>
+    <% if current_user != nil %>
+      <% if current_user.id == @event.administrator_id%>
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="<%= attendance_path(@event.id) %>">Gérer</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-light" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+          </li>
+        </ul>
       <%end%>
     <%end%>
-  </div>
-  <div class="card-body">
-    <h2 class="card-title"><strong><%= @event.title %></h2>
-    <h4 class="card-title"><strong><%= @event.start_date.strftime("%d-%m-%Y %H:%M") %></h4>
-    <h5 class="card-text">Durée : <%= @event.duration%>min (fin le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>)</h5>
-    <h6> Description : </h6>
-    <div class="card shadow rounded col-4 offset-4 mb-3 p-3">
-      <h6 class="card-text"><%= @event.description %></h6>
-    </div>
-    <h5 class="card-text">Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %> (<%= @event.administrator.email %>) </h5>
-    <h6 class="card-text">Prix : <%= @event.price %> € | <%= @event.attendances.count %> participants </h6>
-    <h5 class="card-text">Montpellier</h5>
-    <h6 class="card-text">Situé à <%= @event.location %></h6>
-  </div>
-    <%= flash[:success] %>
-    <% if current_user != nil %>
-      <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
-      <% if current_user.id == @event.administrator_id %>
-        <%= link_to "Gérer l'événement", attendance_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
-      <% elsif @attendance != nil %>
-        <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
-      <% else %>
-        <%= link_to 'Je participe', new_attendance_charge_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
-      <% end %>
-    <% else %>
-      <%= link_to 'Se connecter pour partiper', new_user_session_url, :class => 'btn btn-sm btn-outline-dark' %>
-    <% end %>
-  </p>
+    
+    <div class="container">
 
+      <div class="row">
+
+        <div class="col-md-8">
+          <img class="img-fluid" src="http://tourhivemag.com/wp-content/uploads/2019/07/Parookaville_-750x450.jpg" alt="">
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3"><%= @event.title %></h3>
+          <p><%= @event.description %></p>
+          <ul>
+            <strong><%= @event.start_date.strftime("%d-%m-%Y %H:%M") %></strong><br>
+            <h6 class="card-text">(Fini le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>)</h6>
+            <a><%= @event.attendances.count %> participants<a><br>
+            <a>Prix : <%= @event.price %> €<a><br><br>
+            <a>Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %><a><br>
+            <a>Contact : <%= @event.administrator.email %><a><br>
+            <h5 class="card-text">Montpellier</h5>
+            <h6 class="card-text">Situé à <%= @event.location %></h6>
+          </ul>
+              <%= flash[:success] %>
+          <% if current_user != nil %>
+            <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
+            <% if current_user.id == @event.administrator_id %>
+              <%= link_to "Gérer l'événement", attendance_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
+            <% elsif @attendance != nil %>
+              <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
+            <% else %>
+              <%= link_to 'Je participe', new_attendance_charge_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
+            <% end %>
+          <% else %>
+            <%= link_to 'Se connecter pour partiper', new_user_session_url, :class => 'btn btn-sm btn-outline-dark' %>
+          <% end %>
+        </div>
+
+      </div>
+
+      <h3 class="my-4">Related Projects</h3>
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="https://www.explorewaterlooregion.com/wp-content/uploads/2016/05/5th_ANNUAL_Flames_2.5x1.5-500x300.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="https://www.cotedazur-sothebysrealty.com/theme/_siteSIR1812.sircotazu/datas/articles/images/196/196_00-2019-05-09-1648.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="https://www.enjoyrouennormandy.com/content/uploads/2019/05/festival-embarques-lery-poses.png" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="https://i.pinimg.com/originals/9a/12/64/9a12648d33d34a2a9d84809378284275.jpg" alt="">
+          </a>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
 </div>
-<br>
