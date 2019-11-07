@@ -5,7 +5,7 @@
     <h6 class="card-text"><%= @event.description %></h6>
   </div>
 
-  <%= form_tag new_attendance_charge_path(@event.id) do %>
+  <%= form_tag attendance_charges_path(@event.id) do %>
     <article>
       <% if flash[:error].present? %>
         <div id="error_explanation">

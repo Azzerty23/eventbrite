@@ -1,6 +1,6 @@
 <% content_for :title, @event.title %>
 
-<div class="card text-center">
+<div class="card text-center bg-light">
   <div class="card-header">
   <% if current_user != nil %>
     <% if current_user.id == @event.administrator_id%>
