@@ -2,7 +2,7 @@
 <hr>
 <% @events.each do |event| %>
   <div class="row">
-    <div class="col-lg-6"><br><br>
+    <div class="col-lg-6"><br>
       <h2><strong><em> <%= event.title %></em></strong></h2>
        <% if event.description.to_s.length > 80 %> 
         <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
@@ -22,7 +22,7 @@
       
     </div>
     <div class="col-lg-6">
-      <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+      <img class="img-fluid rounded" src="https://www.yha.com.au/contentassets/73b27ad9115342c7a5395ccc9a744b21/festival-x.jpg">
     </div>
   </div><hr>
 <%end%>
