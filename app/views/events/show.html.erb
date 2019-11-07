@@ -1,6 +1,6 @@
 <% content_for :title, @event.title %>
 
-<div class="card text-center bg-light">
+<div class="card text-center">
   <div class="card-header">
   <% if current_user != nil %>
     <% if current_user.id == @event.administrator_id%>
@@ -32,9 +32,6 @@
     <h6 class="card-text">Situé à <%= @event.location %></h6>
   </div>
 
-  <p>
-
-  
     <% if current_user != nil %>
       <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
       <% if current_user.id == @event.administrator_id %>
