@@ -37,7 +37,7 @@ class ChargesController < ApplicationController
       redirect_to create_attendances_path(@event.id)
       flash[:success]= "Ta participation est enregistrée !"
     else
-      render new_event_charge_path
+      render new_attendances_charge_path
     end
   
   rescue Stripe::CardError => e
