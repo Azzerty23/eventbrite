@@ -27,22 +27,13 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'usd',
     })
-
-    @attendance = Attendance.new
-
-    if @attendance.save
-      puts "$" * 82
-      puts params
-      puts "$" * 82
-      redirect_to event_path(@event.id)
-      flash[:success]= "Ta participation est enregistrée !"
-    else
-      render event_path(@event.id)
-    end
-  
+   
   rescue Stripe::CardError => e
+    puts "$" * 80
+    puts params
+    puts "$" * 80
     flash[:error] = e.message
-    redirect_to new_charge_path
+    redirect_to new_attendance_charge_path
   end
 
 end
