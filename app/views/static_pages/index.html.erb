@@ -3,40 +3,31 @@
 </div>
 
 <% if current_user != nil %> 
-  <div>
-  <%= flash[:success] %>
-  <h2>Bienvenue <%= current_user.email %> !</h2>
+  <div class="alert alert-info" role="alert">
+  <%=flash[:success]%>
+  <h2>Bienvenue <%= current_user.firstname %> !</h2>
   </div>
 <%else%>
   <div class="alert alert-primary" role="alert"><br>
     <%= flash[:danger] %>
     <p>Vous n'êtes pas connecté !<br>
-    <a class="btn btn-info" href="<%= new_user_session_path %>">Se connecter</a> | <a class="btn btn-info" href="<%= new_user_registration_path %>">S'inscrire</a><br><br>
+    <a class="btn btn-info" href="<%= new_user_session_path %>">Se connecter</a> | <a class="btn btn-secondary" href="<%= new_user_registration_path %>">S'inscrire</a><br><br>
   </div>
 <% end %>
 <hr>
-<% @events.each do |event| %>
-  <div class="row">
-    <div class="col-lg-6"><br>
-      <h2><strong> <%= event.title %></strong></h2>
-      <p><%= event.description %></p>
-      <ul>
-        <strong><%= event.start_date.strftime("%Y-%m-%d") %></strong><br>
-        <a><%= event.attendances.count %> participants<a><br>
-        <a>Prix : <%= event.price %> €<a><br><br>
-        <a>Organisateur : <%= event.administrator.firstname%> <%= event.administrator.lastname %><a><br>
-        <a>Contact : <%= event.administrator.email %><a><br>
-      </ul>
-      <a>Montpellier</a>
-      <p>Rue <%= event.location %></p>
+<div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="http://placehold.it/750x450" alt="">
+      </div>
+      <div class="col-lg-6">
+        <h2>About Eventbrite</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+      </div>
     </div>
-    <div class="col-lg-6">
-      <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-    </div>
-  </div><hr>
-<%end%>
 
 <% if user_signed_in? %>
     <%= link_to "Secret page", static_pages_secret_path %>
-<% end %>
+<% end %><br><br>
 
