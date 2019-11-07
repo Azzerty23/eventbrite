@@ -34,10 +34,10 @@ class ChargesController < ApplicationController
       puts "$" * 82
       puts params
       puts "$" * 82
-      redirect_to create_attendances_path(@event.id)
+      redirect_to create_attendance_path(@event.id)
       flash[:success]= "Ta participation est enregistrée !"
     else
-      render new_attendances_charge_path
+      render event_path(@event.id)
     end
   
   rescue Stripe::CardError => e
