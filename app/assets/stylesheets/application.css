@@ -1,4 +1,4 @@
-/*
+ /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -12,29 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require main
+ *= require navbar
+ *= require jumbotron
+ *= require div
  */
-
- .jumbotron {
-  margin-top: -70px;
-  text-align: center;
-  background-image: url(/assets/mtp.jpg);
-  background-size: cover;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: 1.2em;
-  text-align: center;
- }
-
- div {
-   text-align: center;
-   font-family: inherit;;;
- }
-
- .navbar{
-  height: 57px;
- }
