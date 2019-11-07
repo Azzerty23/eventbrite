@@ -1,24 +1,28 @@
 <% content_for :title, "Events" %>
-
-
-<div class="container mt-4">
-    <% @events.each do |event| %>
-    <div class="card flex-row m-2 align-items-center bg-info">
-        <%= image_tag "surf.jpg", class:"card-img-left", size: "200" %>
-        <div class="card-body">
-          <h5 class="card-title"> <%= event.title %> </h5>
-          <% if event.description.to_s.length > 80 %> 
-              <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
-          <% else %>
-              <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
-          <% end %>
-          <footer class="blockquote-footer">
-            <small class="text-muted">
-              <strong><%= event.administrator.firstname %> <%= event.administrator.lastname %></strong> <cite title="Détails de l'event"><%= link_to "voir détails", event_path(event) %></cite>
-            </small>
-            <p> <%= event.attendances.count %> participants </p>
-          </footer>
-        </div>
+<hr>
+<% @events.each do |event| %>
+  <div class="row">
+    <div class="col-lg-6"><br><br>
+      <h2><strong><em> <%= event.title %></em></strong></h2>
+       <% if event.description.to_s.length > 80 %> 
+        <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
+      <% else %>
+        <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
+      <% end %>
+      <ul>
+        <strong><%= event.start_date.strftime("%Y-%m-%d") %></strong><br>
+        <a><%= event.attendances.count %> participants<a><br>
+        <a>Prix : <%= event.price %> €<a><br><br>
+        <a>Organisateur : <%= event.administrator.firstname%> <%= event.administrator.lastname %><a><br>
+        <a>Contact : <%= event.administrator.email %><a><br>
+      </ul>
+      <a>Montpellier</a>
+      <p>Rue <%= event.location %></p>
+      <a class="btn btn-info" href="<%= event_path(event.id) %>">Voir l'évenment</a>
+      
     </div>
-    <% end %>
-  </div>
+    <div class="col-lg-6">
+      <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+    </div>
+  </div><hr>
+<%end%>
