@@ -1,11 +1,12 @@
 <div class="jumbotron">
-  <strong><em><h1 class="display-4">Eventbrite</h1></em></strong>
+  <h1 class="display-4"><strong>Eventbrite</strong> <i class="fas fa-calendar-day"></i></h1><br>
+  <p class="lead"></i> Tous les évenements de Montpellier à portée de mains ! </p>
 </div>
 
 <% if current_user != nil %> 
   <div class="alert alert-info" role="alert">
   <%=flash[:success]%>
-  <h2>Bienvenue <%= current_user.firstname %> !</h2><h3><i class="fas fa-archway"></i></h3>
+  <h3>Bienvenue <%= current_user.firstname %> <i class="fas fa-cocktail"></i></h3>
   </div>
 <%else%>
   <div class="alert alert-info" role="alert"><br>
@@ -24,6 +25,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+        <h3><a class="btn btn-primary" href="<%= events_path %>">Voir tout les évenements</a> <a class="btn btn-info" href="<%= new_event_path %>">Proposer un évenement</a></h3>
       </div>
     </div>
 
