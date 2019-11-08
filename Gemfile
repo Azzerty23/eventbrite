@@ -68,3 +68,4 @@ gem 'table_print'
 gem 'dotenv'
 gem 'devise'
 gem 'stripe'
+gem "aws-sdk-s3", require: false
