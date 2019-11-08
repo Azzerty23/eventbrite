@@ -22,7 +22,9 @@
       
     </div>
     <div class="col-lg-6">
-      <img class="img-fluid rounded" src="https://www.yha.com.au/contentassets/73b27ad9115342c7a5395ccc9a744b21/festival-x.jpg">
+      <% if event.image.attached?%>
+        <%= image_tag event.image, alt: 'image', size: "500" %>
+      <% end %>
     </div>
   </div><hr>
 <%end%>

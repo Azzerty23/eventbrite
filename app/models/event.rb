@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :users, through: :attendances
 
+  has_one_attached :image
+
   validates :start_date, presence: true
   validate :start_date_cannot_be_in_the_past, on: [:create, :update]
   validates :duration, presence: true

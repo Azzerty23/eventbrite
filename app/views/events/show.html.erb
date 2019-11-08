@@ -20,10 +20,12 @@
     
     <div class="container">
 
-      <div class="row">
+      <div class="row d-flex">
 
         <div class="col-md-8">
-          <img class="img-fluid" src="http://tourhivemag.com/wp-content/uploads/2019/07/Parookaville_-750x450.jpg" alt="">
+           <% if @event.image.attached?%>
+            <%= image_tag @event.image, alt: 'image', class:"img-fluid", size: "1000" %>
+          <% end %>
         </div>
 
         <div class="col-md-4">
@@ -61,29 +63,16 @@
 
       <div class="row">
 
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="https://www.explorewaterlooregion.com/wp-content/uploads/2016/05/5th_ANNUAL_Flames_2.5x1.5-500x300.jpg" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="https://www.cotedazur-sothebysrealty.com/theme/_siteSIR1812.sircotazu/datas/articles/images/196/196_00-2019-05-09-1648.jpg" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="https://www.enjoyrouennormandy.com/content/uploads/2019/05/festival-embarques-lery-poses.png" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="https://i.pinimg.com/originals/9a/12/64/9a12648d33d34a2a9d84809378284275.jpg" alt="">
-          </a>
-        </div>
+        <% 4.times do %>
+          <% event = @events.sample %>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <a href=<% link_to event_path(event.id) %> >
+              <% if event.image.attached?%>
+                <%= image_tag event.image, alt: 'image', class:"img-fluid", size: "200" %>
+              <% end %>            
+            </a>
+          </div>
+        <% end %>
 
       </div>
 
