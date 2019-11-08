@@ -27,17 +27,18 @@
         </div>
 
         <div class="col-md-4">
-          <h3 class="my-3"><%= @event.title %></h3>
+          <h3 class="my-3"><strong><em><%= @event.title %> <i class="fab fa-angellist"></i></em></strong></h3>
           <p><%= @event.description %></p>
           <ul>
             <strong><%= @event.start_date.strftime("%d-%m-%Y %H:%M") %></strong><br>
             <h6 class="card-text">(Fini le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>)</h6>
             <a><%= @event.attendances.count %> participants<a><br>
             <a>Prix : <%= @event.price %> €<a><br><br>
-            <a>Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %><a><br>
-            <a>Contact : <%= @event.administrator.email %><a><br>
             <h5 class="card-text">Montpellier</h5>
             <h6 class="card-text">Situé à <%= @event.location %></h6>
+            <a>Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %><a><br>
+            <a>Contact : <%= @event.administrator.email %><a><br>
+
           </ul>
               <%= flash[:success] %>
           <% if current_user != nil %>
@@ -56,7 +57,7 @@
 
       </div>
 
-      <h3 class="my-4">Related Projects</h3>
+      <h3 class="my-4">Évenements associés</h3>
 
       <div class="row">
 

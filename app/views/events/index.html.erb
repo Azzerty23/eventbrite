@@ -3,7 +3,7 @@
 <% @events.each do |event| %>
   <div class="row">
     <div class="col-lg-6"><br>
-      <h2><strong><em> <%= event.title %></em></strong></h2>
+      <h2><strong><em> <%= event.title %> <i class="fab fa-angellist"></i></em></strong></h2>
        <% if event.description.to_s.length > 80 %> 
         <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
       <% else %>
