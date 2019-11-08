@@ -11,7 +11,7 @@ module Admin
 
     def authenticate_admin
       if current_user != nil
-          unless current_user.Admin?
+          unless current_user.admin?
             sign_out current_user
 
             redirect_to root_path
@@ -20,7 +20,7 @@ module Admin
           end
         end
     end
-    
+
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page
