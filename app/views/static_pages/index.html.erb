@@ -6,7 +6,7 @@
 <% if current_user != nil %> 
   <div class="alert alert-info" role="alert">
   <%=flash[:success]%>
-  <h3>Bienvenue <%= current_user.firstname %> <i class="fas fa-cocktail"></i></h3>
+  <h3>Bienvenue <%= current_user.firstname %> !</h3><h3><i class="fas fa-archway"></i></h3 >
   </div>
 <%else%>
   <div class="alert alert-info" role="alert"><br>
