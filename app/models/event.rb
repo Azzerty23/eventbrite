@@ -13,7 +13,7 @@ class Event < ApplicationRecord
   validates :description, presence: true, length: { in: 20..1000 }
   validates :price, numericality: { only_integer: true, greater_than: 0, less_than_or_equal_to: 1000 }
   validates :location, presence: true
-
+  validates :image, attached: true
 
   def start_date_cannot_be_in_the_past
     if start_date.present? && start_date < Time.now
@@ -30,6 +30,5 @@ class Event < ApplicationRecord
   def end_date
     start_date + duration.minutes
   end
-
 
 end
