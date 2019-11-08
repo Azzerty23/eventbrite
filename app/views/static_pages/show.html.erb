@@ -10,54 +10,59 @@
           <a class="btn btn-light" href="<%= user_registration_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
         </li>
       </ul>
+      <h4 class="card-title"><strong><%= @user.firstname %> <%= @user.lastname%></strong></h4>
       <%end%>
     <%end%>
   </div>
   <div class="card-body">
-    <h4 class="card-title"><strong><%= @user.firstname %> <%= @user.lastname%></strong></h4>
+    
     <h6 class="card-text"><%= @user.email %></h6>
     <h6 class="card-text"><%= @user.description %></h6>
     <h6 class="card-text">Profil crée le <%= @user.created_at.strftime("%Y-%m-%d") %></h6><br>
     <h5 class="card-text">Montpellier</h5><br>
   </div>
 </div>
-<br>
-
+<hr>
 <% if @user.administrator_events.count > 0 %>
-<h3> Evénements que j'organise : </H3>
-<div class="container mt-4">
-    <% @user.administrator_events.each do |event| %>
-      <div class="row">
-        <div class="col-lg-6"><br><br>
-          <h2><strong><em> <%= event.title %></em></strong></h2>
-          <% if event.description.to_s.length > 80 %> 
-            <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
-          <% else %>
-            <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
-          <% end %>
-          <ul>
-            <strong><%= event.start_date.strftime("%Y-%m-%d") %></strong><br>
-            <a><%= event.attendances.count %> participants<a><br>
-            <a>Prix : <%= event.price %> €<a><br><br>
-            <a>Organisateur : <%= event.administrator.firstname%> <%= event.administrator.lastname %><a><br>
-            <a>Contact : <%= event.administrator.email %><a><br>
-          </ul>
-          <a>Montpellier</a>
-          <p>Rue <%= event.location %></p>
-          <%= link_to "Gérer l'événement", attendance_path(event.id), :class => 'btn btn-sm btn-dark ml-1' %>
-        </div>
-        <div class="col-lg-6">
-          <img class="img-fluid rounded" src="http://tourhivemag.com/wp-content/uploads/2019/07/Parookaville_-750x450.jpg" alt="">
-        </div>
-      </div><hr>
-    <% end %>
+<div class="card text-center bg-light">
+  <div class="card-header">
+    <h3> Evénements que j'organise : </H3>
   </div>
-<% end %>
-
-
-
-<h3> Mes participations : </H3>
-<div class="container mt-4">
+  <div class="container mt-4">
+      <% @user.administrator_events.each do |event| %>
+        <div class="row">
+          <div class="col-lg-6"><br><br>
+            <h2><strong><em> <%= event.title %></em></strong></h2>
+            <% if event.description.to_s.length > 80 %> 
+              <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
+            <% else %>
+              <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
+            <% end %>
+            <ul>
+              <strong><%= event.start_date.strftime("%Y-%m-%d") %></strong><br>
+              <a><%= event.attendances.count %> participants<a><br>
+              <a>Prix : <%= event.price %> €<a><br><br>
+              <a>Organisateur : <%= event.administrator.firstname%> <%= event.administrator.lastname %><a><br>
+              <a>Contact : <%= event.administrator.email %><a><br>
+            </ul>
+            <a>Montpellier</a>
+            <p>Rue <%= event.location %></p>
+            <%= link_to "Gérer l'événement", attendance_path(event.id), :class => 'btn btn-sm btn-dark ml-1' %>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded" src="http://tourhivemag.com/wp-content/uploads/2019/07/Parookaville_-750x450.jpg" alt="">
+          </div>
+        </div><hr>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<hr>
+<div class="card text-center bg-light">
+  <div class="card-header">
+    <h3> Mes participations : </H3>
+  </div>
+  <div class="container mt-4">
     <% @user.events.each do |event| %>
       <div class="row">
         <div class="col-lg-6"><br><br>
@@ -84,3 +89,4 @@
       </div><hr>
     <% end %>
   </div>
+</div>
